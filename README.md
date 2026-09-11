@@ -1,2 +1,0 @@
-# Wedding
-Jay &amp; Aditi
