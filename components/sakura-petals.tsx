@@ -48,7 +48,7 @@ export function SakuraPetals({ count = 22 }: { count?: number }) {
 
   return (
     <div
-      className="sakura-layer pointer-events-none fixed inset-0 z-20 overflow-hidden"
+      className="sakura-layer pointer-events-none fixed inset-0 z-[60] overflow-hidden"
       aria-hidden="true"
     >
       {petals.map((p) => (
