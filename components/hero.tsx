@@ -29,6 +29,15 @@ export function Hero() {
         priority
       />
 
+      <p
+        aria-hidden="true"
+        className="absolute right-6 top-8 z-10 hidden text-right font-script text-xl leading-tight text-primary/80 sm:block lg:right-10 lg:top-10 lg:text-2xl"
+      >
+        Different Days
+        <br />
+        The Same Forever
+      </p>
+
       <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-8 px-5 pb-16 pt-28 md:grid-cols-2 md:pb-24 md:pt-32">
         {/* Copy */}
         <div className="text-center md:text-left">

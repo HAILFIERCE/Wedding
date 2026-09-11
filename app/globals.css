@@ -51,31 +51,31 @@
 
 :root {
   color-scheme: light;
-  --background: oklch(0.949 0.021 82);
-  --foreground: oklch(0.36 0.03 55);
-  --card: oklch(0.98 0.01 85);
-  --card-foreground: oklch(0.36 0.03 55);
-  --popover: oklch(0.98 0.01 85);
-  --popover-foreground: oklch(0.36 0.03 55);
-  --primary: oklch(0.62 0.08 72);
-  --primary-foreground: oklch(0.98 0.01 85);
-  --secondary: oklch(0.93 0.02 60);
-  --secondary-foreground: oklch(0.36 0.03 55);
-  --muted: oklch(0.93 0.015 80);
-  --muted-foreground: oklch(0.52 0.03 55);
-  --accent: oklch(0.86 0.045 25);
-  --accent-foreground: oklch(0.36 0.03 55);
+  --background: oklch(0.96 0.018 40);
+  --foreground: oklch(0.3 0.06 20);
+  --card: oklch(0.985 0.012 50);
+  --card-foreground: oklch(0.3 0.06 20);
+  --popover: oklch(0.985 0.012 50);
+  --popover-foreground: oklch(0.3 0.06 20);
+  --primary: oklch(0.4 0.14 18);
+  --primary-foreground: oklch(0.98 0.015 50);
+  --secondary: oklch(0.92 0.035 25);
+  --secondary-foreground: oklch(0.3 0.06 20);
+  --muted: oklch(0.93 0.02 35);
+  --muted-foreground: oklch(0.48 0.05 20);
+  --accent: oklch(0.86 0.06 30);
+  --accent-foreground: oklch(0.3 0.06 20);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.83 0.04 70);
-  --input: oklch(0.88 0.03 75);
-  --ring: oklch(0.62 0.08 72);
-  --gold: oklch(0.62 0.08 72);
-  --blush: oklch(0.82 0.06 22);
-  --chart-1: oklch(0.62 0.08 72);
-  --chart-2: oklch(0.82 0.06 22);
-  --chart-3: oklch(0.72 0.05 60);
+  --border: oklch(0.82 0.05 25);
+  --input: oklch(0.88 0.04 30);
+  --ring: oklch(0.4 0.14 18);
+  --gold: oklch(0.72 0.11 75);
+  --blush: oklch(0.78 0.09 18);
+  --chart-1: oklch(0.4 0.14 18);
+  --chart-2: oklch(0.78 0.09 18);
+  --chart-3: oklch(0.72 0.11 75);
   --chart-4: oklch(0.5 0.04 55);
-  --chart-5: oklch(0.36 0.03 55);
+  --chart-5: oklch(0.3 0.06 20);
   --radius: 0.375rem;
   --sidebar: oklch(0.98 0.01 85);
   --sidebar-foreground: oklch(0.36 0.03 55);
@@ -168,22 +168,22 @@
   }
   body {
     @apply bg-background text-foreground;
-    /* Warm ivory glow that matches the couple illustration's backdrop,
-       so the artwork blends seamlessly into the page throughout. */
+    /* Warm rose-ivory glow that matches the palace/dusk imagery,
+       so photos blend seamlessly into the page throughout. */
     background-image:
       radial-gradient(
         120% 70% at 50% -10%,
-        oklch(0.98 0.025 78) 0%,
+        oklch(0.98 0.02 55) 0%,
         transparent 55%
       ),
       radial-gradient(
         90% 60% at 85% 8%,
-        oklch(0.95 0.04 30 / 0.35) 0%,
+        oklch(0.9 0.07 25 / 0.35) 0%,
         transparent 45%
       ),
       radial-gradient(
         90% 60% at 12% 6%,
-        oklch(0.95 0.04 30 / 0.3) 0%,
+        oklch(0.9 0.07 25 / 0.3) 0%,
         transparent 45%
       );
     background-attachment: fixed;
@@ -243,6 +243,59 @@
   }
 }
 
+@keyframes seal-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 oklch(0.72 0.11 75 / 0.35);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 0 0 14px oklch(0.72 0.11 75 / 0);
+  }
+}
+
+@keyframes seal-crack {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1.15) rotate(-8deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.4) rotate(-18deg);
+    opacity: 0;
+  }
+}
+
+@keyframes card-slide-out {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-6vh) scale(1.04);
+    opacity: 0;
+  }
+}
+
+@keyframes gate-fade {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  99% {
+    opacity: 0;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 .reveal {
   opacity: 0;
 }
@@ -259,6 +312,9 @@
     animation: none;
   }
   .sakura-layer {
+    display: none;
+  }
+  .envelope-gate.is-opening {
     display: none;
   }
 }

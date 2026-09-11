@@ -7,10 +7,12 @@ import { Rsvp } from '@/components/rsvp'
 import { SiteFooter } from '@/components/site-footer'
 import { SakuraPetals } from '@/components/sakura-petals'
 import { Reveal } from '@/components/reveal'
+import { EnvelopeIntro } from '@/components/envelope-intro'
 
 export default function Page() {
   return (
     <main className="relative min-h-dvh">
+      <EnvelopeIntro />
       <SakuraPetals />
       <SiteHeader />
       <Hero />
